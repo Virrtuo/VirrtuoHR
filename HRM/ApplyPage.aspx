@@ -10,6 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <h1>HRML By Ajith Fan Siva</h1>
+         <h1>HRML 2</h1>
     </div>
     </form>
 </body>
