@@ -1,0 +1,256 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="virrtuohr_dbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="virrtuohr_dbModelStoreContainer">
+          <EntitySet Name="empbasic" EntityType="virrtuohr_dbModel.Store.empbasic" store:Type="Tables" Schema="virrtuohr_db" />
+          <EntitySet Name="empdetails" EntityType="virrtuohr_dbModel.Store.empdetails" store:Type="Tables" Schema="virrtuohr_db" />
+          <EntitySet Name="users" EntityType="virrtuohr_dbModel.Store.users" store:Type="Tables" Schema="virrtuohr_db" />
+          <AssociationSet Name="FK_EmpID" Association="virrtuohr_dbModel.Store.FK_EmpID">
+            <End Role="empbasic" EntitySet="empbasic" />
+            <End Role="empdetails" EntitySet="empdetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="empbasic">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AssID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="DOJ" Type="date" Nullable="false" />
+          <Property Name="FName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
+          <Property Name="Designation" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="empdetails">
+          <Key>
+            <PropertyRef Name="EmpDetID" />
+          </Key>
+          <Property Name="EmpDetID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="DOB" Type="date" Nullable="false" />
+          <Property Name="DOA" Type="date" />
+          <Property Name="SpousName" Type="varchar" MaxLength="50" />
+          <Property Name="MotherName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="FatherName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Childrens" Type="varchar" MaxLength="100" />
+          <Property Name="BloodGroup" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="PanNO" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="PassPortNo" Type="varchar" MaxLength="30" />
+          <Property Name="RessAdds" Type="varchar" />
+          <Property Name="RessPin" Type="varchar" MaxLength="30" />
+          <Property Name="RessCity" Type="varchar" MaxLength="50" />
+          <Property Name="RessState" Type="varchar" MaxLength="50" />
+          <Property Name="RessCountry" Type="varchar" MaxLength="50" />
+          <Property Name="PermAdds" Type="varchar" />
+          <Property Name="PermPin" Type="varchar" MaxLength="30" />
+          <Property Name="PermCity" Type="varchar" MaxLength="50" />
+          <Property Name="PermState" Type="varchar" MaxLength="50" />
+          <Property Name="PermCountry" Type="varchar" MaxLength="50" />
+          <Property Name="Phone" Type="varchar" MaxLength="30" />
+          <Property Name="Mobile" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="EmailOff" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="EmailPerm" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="BankAccNo" Type="varchar" MaxLength="50" />
+          <Property Name="BankName" Type="varchar" MaxLength="50" />
+          <Property Name="BankBranch" Type="varchar" MaxLength="50" />
+          <Property Name="BankIFSC" Type="varchar" MaxLength="50" />
+          <Property Name="Photo" Type="longblob" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="AssID" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_EmpID">
+          <End Role="empbasic" Type="virrtuohr_dbModel.Store.empbasic" Multiplicity="1" />
+          <End Role="empdetails" Type="virrtuohr_dbModel.Store.empdetails" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empbasic">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="empdetails">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="virrtuohr_dbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="virrtuohr_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="empbasics" EntityType="virrtuohr_dbModel.empbasic" />
+          <EntitySet Name="empdetails" EntityType="virrtuohr_dbModel.empdetail" />
+          <EntitySet Name="users" EntityType="virrtuohr_dbModel.user" />
+          <AssociationSet Name="FK_EmpID" Association="virrtuohr_dbModel.FK_EmpID">
+            <End Role="empbasic" EntitySet="empbasics" />
+            <End Role="empdetails" EntitySet="empdetails" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="empbasic">
+          <Key>
+            <PropertyRef Name="EmpID" />
+          </Key>
+          <Property Name="EmpID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AssID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="DOJ" Type="DateTime" Nullable="false" />
+          <Property Name="FName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
+          <Property Name="Designation" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="empdetails" Relationship="virrtuohr_dbModel.FK_EmpID" FromRole="empbasic" ToRole="empdetails" />
+        </EntityType>
+        <EntityType Name="empdetail">
+          <Key>
+            <PropertyRef Name="EmpDetID" />
+          </Key>
+          <Property Name="EmpDetID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" />
+          <Property Name="DOA" Type="DateTime" />
+          <Property Name="SpousName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MotherName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="FatherName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Childrens" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BloodGroup" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="PanNO" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PassPortNo" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="RessAdds" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="RessPin" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="RessCity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RessState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="RessCountry" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PermAdds" Type="String" MaxLength="1000" Unicode="false" FixedLength="false" />
+          <Property Name="PermPin" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="PermCity" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PermState" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PermCountry" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Phone" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="Mobile" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="EmailOff" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="EmailPerm" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BankAccNo" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BankName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BankBranch" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="BankIFSC" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Photo" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="empbasic" Relationship="virrtuohr_dbModel.FK_EmpID" FromRole="empdetails" ToRole="empbasic" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="AssID" Type="String" Nullable="false" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_EmpID">
+          <End Role="empbasic" Type="virrtuohr_dbModel.empbasic" Multiplicity="1" />
+          <End Role="empdetails" Type="virrtuohr_dbModel.empdetail" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="empbasic">
+              <PropertyRef Name="EmpID" />
+            </Principal>
+            <Dependent Role="empdetails">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="virrtuohr_dbModelStoreContainer" CdmEntityContainer="virrtuohr_dbEntities">
+          <EntitySetMapping Name="empbasics">
+            <EntityTypeMapping TypeName="virrtuohr_dbModel.empbasic">
+              <MappingFragment StoreEntitySet="empbasic">
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="AssID" ColumnName="AssID" />
+                <ScalarProperty Name="DOJ" ColumnName="DOJ" />
+                <ScalarProperty Name="FName" ColumnName="FName" />
+                <ScalarProperty Name="LName" ColumnName="LName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Designation" ColumnName="Designation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empdetails">
+            <EntityTypeMapping TypeName="virrtuohr_dbModel.empdetail">
+              <MappingFragment StoreEntitySet="empdetails">
+                <ScalarProperty Name="EmpDetID" ColumnName="EmpDetID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="DOA" ColumnName="DOA" />
+                <ScalarProperty Name="SpousName" ColumnName="SpousName" />
+                <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="Childrens" ColumnName="Childrens" />
+                <ScalarProperty Name="BloodGroup" ColumnName="BloodGroup" />
+                <ScalarProperty Name="PanNO" ColumnName="PanNO" />
+                <ScalarProperty Name="PassPortNo" ColumnName="PassPortNo" />
+                <ScalarProperty Name="RessAdds" ColumnName="RessAdds" />
+                <ScalarProperty Name="RessPin" ColumnName="RessPin" />
+                <ScalarProperty Name="RessCity" ColumnName="RessCity" />
+                <ScalarProperty Name="RessState" ColumnName="RessState" />
+                <ScalarProperty Name="RessCountry" ColumnName="RessCountry" />
+                <ScalarProperty Name="PermAdds" ColumnName="PermAdds" />
+                <ScalarProperty Name="PermPin" ColumnName="PermPin" />
+                <ScalarProperty Name="PermCity" ColumnName="PermCity" />
+                <ScalarProperty Name="PermState" ColumnName="PermState" />
+                <ScalarProperty Name="PermCountry" ColumnName="PermCountry" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="EmailOff" ColumnName="EmailOff" />
+                <ScalarProperty Name="EmailPerm" ColumnName="EmailPerm" />
+                <ScalarProperty Name="BankAccNo" ColumnName="BankAccNo" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="BankBranch" ColumnName="BankBranch" />
+                <ScalarProperty Name="BankIFSC" ColumnName="BankIFSC" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="virrtuohr_dbModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="AssID" ColumnName="AssID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
