@@ -1,7 +1,7 @@
 ﻿/* Middle
 -----------------------------------------------------------------------------*/
 .content {
-	padding: 0 0 30px;
+	padding: 0 0 0px;
 }
 
 .Home {    
@@ -105,5 +105,4 @@ width:600px;margin-left:50px;
 .ValidationSummary {
 color:red;
 font-weight:700;
-font-family:Calibri;
 }
