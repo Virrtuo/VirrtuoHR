@@ -7,13 +7,14 @@
     <title></title>
     <link href="Styles/master.css" rel="stylesheet" type="text/css" />
     <link href="Styles/LoginStyle.css" rel="stylesheet" />
+    <link href="Styles/MenuStyle.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-        <div>
+        <menu>
             <div style="position: absolute; color: #F74906; top: 10px; float: right; right: 5px">
                 <asp:LoginView ID="LoginView1" runat="server">
                     <AnonymousTemplate>
@@ -35,7 +36,7 @@
                 <abbr style="font-family: Utsaah; font-size: Large; font-bold: True;">
                     Human Resource Management</abbr>
             </div>
-            <div class="menu">
+            <menu class="menu">
                 <ul id="menu">
                     <li><a href="#">Home</a> </li>
                 </ul>
@@ -48,7 +49,7 @@
                 <ul id="menu">
                     <li><a href="#">Employee</a></li>
                 </ul>
-            </div>
+            </menu>
             <main class="content">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
     
