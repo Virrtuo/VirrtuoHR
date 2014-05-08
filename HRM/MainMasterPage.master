@@ -1,44 +1,19 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs"
-    Inherits="MainMasterPage" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MainMasterPage.master.cs" Inherits="MainMasterPage" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link href="Styles/master.css" rel="stylesheet" type="text/css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
+    <asp:ContentPlaceHolder id="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-        <div style="position: absolute; color: #333332; top: 10px; float: right; right: 5px">
-            <asp:LoginView ID="LoginView1" runat="server">
-                <AnonymousTemplate>
-                    Welcome! please
-                    <asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="#333332" LogoutAction="RedirectToLoginPage"
-                        LogoutPageUrl="" />
-                </AnonymousTemplate>
-                <LoggedInTemplate>
-                    Welcome!
-                    <asp:LoginName ID="LoginName1" runat="server" />
-                    <asp:LoginStatus ID="LoginStatus2" runat="server" ForeColor="#333332" LogoutAction="RedirectToLoginPage"
-                        LogoutPageUrl="" />
-                </LoggedInTemplate>
-            </asp:LoginView>
-        </div>
-        <div id="header">
-            <asp:Label ID="lblEmpHead" runat="server" ForeColor="#333332" Text="HRM" Font-Names="Arial Rounded MT Bold"
-                Font-Size="XX-Large"></asp:Label>
-        </div>
-        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
         </asp:ContentPlaceHolder>
-        <div class="divLinebottom">
-        </div>
-        <div class="footer">
-            <asp:Label ID="lblfooter" runat="server" ForeColor="#333332" Text="© 2009. Virrtuo Tech Soft. Allrights Reserved"
-                Font-Names="Arial Rounded MT Bold" Font-Size="Small"></asp:Label>
-        </div>
     </div>
     </form>
 </body>

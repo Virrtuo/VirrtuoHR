@@ -8,10 +8,10 @@
 #header
 {
     width: 100%;
-    height: 50px;
+    height: 55px;
     margin: 0;
     padding: 0;
-    background-color: #828180;
+    background-color: #424241;
 }
 #lblEmpHead
 {
@@ -27,6 +27,14 @@
     background-color: #424241;
     box-shadow: 1px 1px 2px 2px rgba(51, 62, 67, 0.3);
 }
+abbr
+{
+   color:#C2C1BF;
+   top:35px;
+   float:left; 
+   left:53px;
+   position:absolute;
+    }
 .footer
 {
     width: 100%;

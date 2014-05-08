@@ -31,13 +31,14 @@
         <div id="header">
             <asp:Label ID="lblEmpHead" runat="server" ForeColor="#C2C1BF" Text="HRM" Font-Names="Arial Rounded MT Bold"
                 Font-Size="XX-Large"></asp:Label>
+                <abbr>Human Resource Management</abbr>
         </div>
         <main class="content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" >
         
             </asp:ContentPlaceHolder>
         </main>
-        </div>
+        
         <div class="footer">
             <asp:Label ID="lblfooter" runat="server" ForeColor="#333332" Text="© 2009. Virrtuo Tech Soft. Allrights Reserved"
                 Font-Names="Arial Rounded MT Bold" Font-Size="Small"></asp:Label>
