@@ -7,13 +7,13 @@
     <title>HRM</title>
     <link href="Styles/master.css" rel="stylesheet" type="text/css" />
     <link href="Styles/LoginStyle.css" rel="stylesheet" />
-    <asp:ContentPlaceHolder id="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-     <%--   <div style="position: absolute; color: #F74906; top: 10px; float: right; right: 5px">
+        <%--   <div style="position: absolute; color: #F74906; top: 10px; float: right; right: 5px">
             <asp:LoginView ID="LoginView1" runat="server">
                 <AnonymousTemplate>
                     Welcome! please
@@ -28,20 +28,20 @@
                 </LoggedInTemplate>
             </asp:LoginView>
         </div>--%>
-        <div id="header">
-            <asp:Label ID="lblEmpHead" runat="server" ForeColor="#C2C1BF" Text="HRM" Font-Names="Arial Rounded MT Bold"
-                Font-Size="XX-Large"></asp:Label>
-                <abbr>Human Resource Management</abbr>
+        <div id="header" style="font-family: Utsaah; font-weight: bold">
+            <asp:Label ID="lblEmpHead" runat="server" ForeColor="#C2C1BF" Text="HRM" Font-Names="Utsaah"
+                Font-Size="XX-Large" Font-Bold="True"></asp:Label>
+            <abbr style="font-family: Utsaah; font-size: Large;Font-Bold:True;">
+                Human Resource Management</abbr>
         </div>
         <main class="content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" >
         
             </asp:ContentPlaceHolder>
         </main>
-        
         <div class="footer">
-            <asp:Label ID="lblfooter" runat="server" ForeColor="#333332" Text="© 2009. Virrtuo Tech Soft. Allrights Reserved"
-                Font-Names="Arial Rounded MT Bold" Font-Size="Small"></asp:Label>
+            <asp:Label ID="lblfooter" runat="server" ForeColor="#C2C1BF" Font-Bold="True" Text="© 2009. Virrtuo Tech Soft. Allrights Reserved"
+                Font-Names="Utsaah" Font-Size="Larger"></asp:Label>
         </div>
     </div>
     </form>
