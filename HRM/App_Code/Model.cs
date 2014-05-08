@@ -24,6 +24,7 @@ public partial class empbasic
     public string LName { get; set; }
     public string Gender { get; set; }
     public string Designation { get; set; }
+    public int Status { get; set; }
 
     public virtual ICollection<empdetail> empdetails { get; set; }
 }

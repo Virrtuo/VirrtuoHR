@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="virrtuohr_dbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="virrtuohr_dbModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
         <EntityContainer Name="virrtuohr_dbModelStoreContainer">
           <EntitySet Name="empbasic" EntityType="virrtuohr_dbModel.Store.empbasic" store:Type="Tables" Schema="virrtuohr_db" />
           <EntitySet Name="empdetails" EntityType="virrtuohr_dbModel.Store.empdetails" store:Type="Tables" Schema="virrtuohr_db" />
@@ -25,6 +25,7 @@
           <Property Name="LName" Type="varchar" Nullable="false" MaxLength="50" />
           <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="10" />
           <Property Name="Designation" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="int" />
         </EntityType>
         <EntityType Name="empdetails">
           <Key>
@@ -82,8 +83,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="virrtuohr_dbModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
@@ -108,6 +108,7 @@
           <Property Name="Gender" Type="String" Nullable="false" MaxLength="10" Unicode="false" FixedLength="false" />
           <Property Name="Designation" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
           <NavigationProperty Name="empdetails" Relationship="virrtuohr_dbModel.FK_EmpID" FromRole="empbasic" ToRole="empdetails" />
+          <Property Type="Int32" Name="Status" />
         </EntityType>
         <EntityType Name="empdetail">
           <Key>
@@ -175,6 +176,7 @@
           <EntitySetMapping Name="empbasics">
             <EntityTypeMapping TypeName="virrtuohr_dbModel.empbasic">
               <MappingFragment StoreEntitySet="empbasic">
+                <ScalarProperty Name="Status" ColumnName="Status" />
                 <ScalarProperty Name="EmpID" ColumnName="EmpID" />
                 <ScalarProperty Name="AssID" ColumnName="AssID" />
                 <ScalarProperty Name="DOJ" ColumnName="DOJ" />
