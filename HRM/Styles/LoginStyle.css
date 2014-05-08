@@ -1,4 +1,26 @@
-﻿/*Login
+﻿/* Middle
+-----------------------------------------------------------------------------*/
+.content {
+	padding: 0 0 30px;
+}
+
+.Home {    
+    padding-top:25px;
+    padding-left:25px;
+   
+}
+
+    .Home #Left {
+        float:left;
+        width:50%;
+    }
+
+    .Home #Right {
+        float:right;
+        width:50%;
+    }
+
+/*Login
 -----------------------------------------------------------------------------*/
 .Login {
 padding-top:75px;
