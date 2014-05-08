@@ -1,0 +1,140 @@
+﻿body
+{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+#header
+{
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: #EDEDE4;
+}
+#lblEmpHead
+{
+    position: absolute;
+    top: 5px;
+    padding-left: 50px;
+}
+.menu
+{
+    width: 100%;
+    height: 30px;
+    /*background-color: #EDEDE4;*/
+   
+    box-shadow: 1px 1px 2px 2px rgba(51, 62, 67, 0.3);
+}
+.footer
+{
+    width: 100%;
+    height: 3%;
+    position: fixed;
+    bottom: 0;
+    background-color: #EDEDE4;
+    text-align: center;
+    padding-top: 7px;
+}
+ul#menu
+{
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    list-style: none;
+    padding: 0 5px;
+    float: Left;
+ 
+}
+ul.submenu
+{
+    margin: 0;
+    padding: 5px 0 0 0;
+    float: right;
+    list-style: none;
+}
+
+ul#menu li
+{
+    height: 30px;
+    padding: 5px 0 0;
+}
+ul#menu li ul.submenu li
+{
+    padding: 0;
+}
+/* hide the submenu */
+li ul.submenu
+{
+    display: none;
+}
+
+ul#menu li a
+{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    padding: 0 12px;
+    color: #554E44;
+    float: none;
+    border-radius: 5px;
+}
+
+ul#menu li ul.submenu li a
+{
+    padding: 10px 10px 5px 10px;
+    width: 100px;
+}
+ul#menu li, ul#menu li a
+{
+    position: relative;
+    float: left;
+}
+/* show the submenu */
+ul#menu li:hover ul.submenu
+{
+    display: block;
+    position: absolute;
+    float: left;
+}
+ul#menu li:hover li, ul#menu li:hover a
+{
+    float: none;
+    color: #767685;
+}
+ul#menu li:hover li a:hover
+{
+    color: Black;
+    background-color: #BEBEBE;
+}
+#menu li a span
+{
+    display: block;
+    position: absolute;
+    height: 195px;
+    width: 10px;
+    right: 0;
+    top: 0;
+}
+ul#menu li a:hover, ul#menu li a:hover span
+{
+    background-position: 0 -194px;
+}
+.lblAlign
+{
+    float: left;
+    left: 50%;
+}
+.pnlmstr
+{
+    margin-left: 45%;
+}
+.lblhead
+{
+    text-align: center;
+}
+.lblsubbutton
+{
+    float: right;
+}
