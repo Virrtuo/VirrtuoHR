@@ -6,8 +6,12 @@
 <head runat="server">
     <title>HRM</title>
     <link href="Styles/master.css" rel="stylesheet" type="text/css" />
+<<<<<<< Updated upstream
     <link href="Styles/LoginStyle.css" rel="stylesheet" />
     <asp:ContentPlaceHolder id="head" runat="server">
+=======
+    <asp:ContentPlaceHolder ID="head" runat="server">
+>>>>>>> Stashed changes
     </asp:ContentPlaceHolder>
 </head>
 <body>
@@ -29,19 +33,25 @@
             </asp:LoginView>
         </div>--%>
         <div id="header">
-            <asp:Label ID="lblEmpHead" runat="server" ForeColor="#C2C1BF" Text="HRM" Font-Names="Arial Rounded MT Bold"
+            <asp:Label ID="lblEmpHead" runat="server" ForeColor="#333332" Text="HRM" Font-Names="Arial Rounded MT Bold"
                 Font-Size="XX-Large"></asp:Label>
         </div>
+<<<<<<< Updated upstream
         <main class="content">
             <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server" >
         
             </asp:ContentPlaceHolder>
         </main>
+=======
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="divLinebottom">
         </div>
         <div class="footer">
             <asp:Label ID="lblfooter" runat="server" ForeColor="#333332" Text="© 2009. Virrtuo Tech Soft. Allrights Reserved"
                 Font-Names="Arial Rounded MT Bold" Font-Size="Small"></asp:Label>
         </div>
+>>>>>>> Stashed changes
     </div>
     </form>
 </body>
