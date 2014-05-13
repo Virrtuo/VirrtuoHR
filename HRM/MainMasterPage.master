@@ -7,7 +7,6 @@
     <title></title>
     <link href="Styles/master.css" rel="stylesheet" type="text/css" />
     <link href="Styles/LoginStyle.css" rel="stylesheet" />
-   
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
@@ -37,19 +36,24 @@
                     Human Resource Management</abbr>
             </div>
             <div class="menu">
-                <ul id="menu">
-                    <li><a href="#">Home</a> </li>
-                </ul>
-                <ul id="menu">
-                    <li><a href="#">About</a></li>
-                </ul>
-                <ul id="menu">
-                    <li><a href="#">User</a> </li>
-                </ul>
-                <ul id="menu">
-                    <li><a href="#">Employee</a></li>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a>
+                        <ul>
+                            <li><a href="#">Change Password</a></li>
+                            <li><a href="#">My Profile</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Employee</a>
+                        <ul>
+                            <li><a href="AddEmployee.aspx">Add Employee</a></li>
+                            <li><a href="#">Employee List</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Email Template</a></li>
                 </ul>
             </div>
+        
             <main class="content">
         <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
     
