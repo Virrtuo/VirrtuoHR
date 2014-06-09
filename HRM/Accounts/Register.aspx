@@ -36,6 +36,19 @@
                         </asp:RequiredFieldValidator>
                     </td>                       
                 </tr>  
+
+                <tr>
+                    <td>
+                        <asp:Label ID="Label6" runat="server" Text="Email-ID" CssClass="LoginLabel"></asp:Label>
+                    </td>  
+                     <td >
+                        <asp:TextBox ID="txtEmailId" runat="server" CssClass="loginTextBox"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ErrorMessage="Email Required"
+                        ControlToValidate="txtUsername" ForeColor="#8A0808">*
+                        </asp:RequiredFieldValidator>                      
+                    </td>                       
+                </tr>
+
                 <tr>
                     <td>
                         <asp:Label ID="Label1" runat="server" Text="Username" CssClass="LoginLabel"></asp:Label>
@@ -73,7 +86,15 @@
                         </asp:CompareValidator>
                     </td>                         
                 </tr>                             
-                
+                <tr>
+                        <td class="LoginLabel"> Role : </td>
+                         <td>
+                             <asp:TextBox ID="txtRole" runat="server"></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ErrorMessage="Role Required"
+                                    ControlToValidate="txtRole" ForeColor="#8A0808">*
+                                </asp:RequiredFieldValidator>
+                            </td>
+                        </tr>
                 <tr>
                     <td></td>
                     <td>
@@ -86,7 +107,7 @@
                     <td>
                         <asp:Label ID="Label3" runat="server" Text="If Already Member?" CssClass="LoginLabel"></asp:Label>&nbsp
                         <asp:LinkButton ID="LinkButton1" runat="server" CssClass="LoginLabel" ForeColor="Green" CausesValidation="false"
-                            PostBackUrl="~/Login.aspx">Login Here</asp:LinkButton>
+                            PostBackUrl="~/Accounts/Login.aspx">Login Here</asp:LinkButton>
                     </td>                        
                 </tr>
             </table>
