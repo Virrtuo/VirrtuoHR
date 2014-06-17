@@ -1,0 +1,69 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Admin.master.cs"
+    Inherits="MainMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="Styles/master.css" rel="stylesheet" type="text/css" />
+    <link href="Styles/LoginStyle.css" rel="stylesheet" />
+    <link href="Styles/MenuStyle.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <div class="menu">
+            <div style="position: absolute; color: #C2C1BF; top: 10px; float: right; right: 5px">
+                <asp:LoginView ID="LoginView1" runat="server">
+                    <AnonymousTemplate>
+                        Welcome! please
+                        <asp:LoginStatus ID="LoginStatus1" runat="server" ForeColor="#C2C1BF" LogoutAction="RedirectToLoginPage"
+                            LogoutPageUrl="" />
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome!
+                        <asp:LoginName ID="LoginName1" runat="server" />
+                        <asp:LoginStatus ID="LoginStatus2" runat="server" ForeColor="#C2C1BF" LogoutAction="RedirectToLoginPage"
+                            LogoutPageUrl="" />
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>
+            <div id="header" style="font-family: Utsaah; font-weight: bold">
+                <asp:Label ID="lblEmpHead" runat="server" ForeColor="#C2C1BF" Text="HRM" Font-Names="Utsaah"
+                    Font-Size="XX-Large" Font-Bold="True"></asp:Label>
+                <abbr style="font-family: Utsaah; font-size: Large; font-bold: True;">
+                    Human Resource Management</abbr>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Profile</a>
+                        <ul>
+                            <li><a href='<% =Page.ResolveUrl("~/Employee/ChangePasswordAdmin.aspx") %>'>Change Password</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a href="#">Employee</a>
+                        <ul>
+                            <li><a href='<% =Page.ResolveUrl("~/Admin/addEmpDetails.aspx") %>'>Employee List</a></li>
+                            <li><a href='<% =Page.ResolveUrl("~/Admin/VerificationDetails.aspx") %>'>Verification</a></li>
+                        </ul>
+                    </li>
+                    <li><a href='<% =Page.ResolveUrl("~/Templates/BirthDayTemplate.aspx") %>'>EmailTemplate</a></li>
+                </ul>
+            </div>
+            <main class="content">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+    
+        </asp:ContentPlaceHolder>
+         </main>
+            <div class="footer">
+                <asp:Label ID="lblfooter" runat="server" ForeColor="#C2C1BF" Font-Bold="True" Text="© 2009. Virrtuo TechSoft. All rights Reserved"
+                    Font-Names="Utsaah" Font-Size="Large"></asp:Label>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
