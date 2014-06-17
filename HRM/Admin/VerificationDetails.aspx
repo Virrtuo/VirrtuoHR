@@ -55,7 +55,7 @@
                 <SortedDescendingCellStyle BackColor="#E5E5E5" />
                 <SortedDescendingHeaderStyle BackColor="#242121" />
                 <Columns>
-                    <asp:BoundField DataField="EmpDetID" HeaderStyle-HorizontalAlign="Left"  HeaderText="Employee Detail Id " />
+                   <%-- <asp:BoundField DataField="EmpDetID" HeaderStyle-HorizontalAlign="Left"  HeaderText="Employee Detail Id " />--%>
                     <asp:BoundField DataField="EmpID" HeaderStyle-HorizontalAlign="Left"  HeaderText="Employee Id" />
                     <asp:BoundField DataField="DOB" HeaderStyle-HorizontalAlign="Left" HeaderText="Date Of Birth" />
                     <asp:BoundField DataField="DOA" HeaderStyle-HorizontalAlign="Left" HeaderText="Date Of Anniversary" />
@@ -64,8 +64,8 @@
                     <asp:BoundField DataField="FatherName" HeaderStyle-HorizontalAlign="Left" HeaderText="Father Name " />
                    <%-- <asp:BoundField DataField="Childrens" HeaderStyle-HorizontalAlign="Left" HeaderText="Childrens " />
                     <asp:BoundField DataField="BloodGroup" HeaderStyle-HorizontalAlign="Left" HeaderText="BloodGroup " />--%>
-                    <asp:BoundField DataField="PanNO" HeaderStyle-HorizontalAlign="Left" HeaderText="PanNO " />
-                    <asp:BoundField DataField="PassPortNo" HeaderStyle-HorizontalAlign="Left" HeaderText="PassPortNo " />
+                    <asp:BoundField DataField="PanNO" HeaderStyle-HorizontalAlign="Left" HeaderText="Pan NO " />
+                    <asp:BoundField DataField="PassPortNo" HeaderStyle-HorizontalAlign="Left" HeaderText="Passport No " />
                    <%-- <asp:BoundField DataField="RessAdds" HeaderStyle-HorizontalAlign="Left" HeaderText="RessAdds " />
                     <asp:BoundField DataField="RessPin" HeaderStyle-HorizontalAlign="Left" HeaderText="RessPin " />
                     <asp:BoundField DataField="RessState" HeaderStyle-HorizontalAlign="Left" HeaderText="RessState " />
@@ -77,14 +77,14 @@
                     <asp:BoundField DataField="PermCountry" HeaderStyle-HorizontalAlign="Left" HeaderText="PermCountry " />
                     <asp:BoundField DataField="Phone" HeaderStyle-HorizontalAlign="Left" HeaderText="Phone " />--%>
                     <asp:BoundField DataField="Mobile" HeaderStyle-HorizontalAlign="Left" HeaderText="Mobile " />
-                    <asp:BoundField DataField="EmailOff" HeaderStyle-HorizontalAlign="Left" HeaderText="EmailOff " />
-                    <asp:BoundField DataField="EmailPerm" HeaderStyle-HorizontalAlign="Left" HeaderText="EmailPerm " />
+                    <asp:BoundField DataField="EmailOff" HeaderStyle-HorizontalAlign="Left" HeaderText="official MailId " />
+                    <asp:BoundField DataField="EmailPerm" HeaderStyle-HorizontalAlign="Left" HeaderText="Personal MailId " />
                     <%--  <asp:BoundField DataField="BankAccNo" HeaderStyle-HorizontalAlign="Left" HeaderText="BankAccNo " />
                     <asp:BoundField DataField="BankName" HeaderStyle-HorizontalAlign="Left" HeaderText="BankName " />
                   <asp:BoundField DataField="BankBranch" HeaderStyle-HorizontalAlign="Left" HeaderText="BankBranch " />
                     <asp:BoundField DataField="BankIFSC" HeaderStyle-HorizontalAlign="Left" HeaderText="BankIFSC " />--%>
                     <%--<asp:BoundField DataField="" HeaderStyle-HorizontalAlign="Left" HeaderText="Gender " />--%>
-                    <asp:BoundField DataField="DateTime" HeaderStyle-HorizontalAlign="Left" HeaderText="DateTime " />
+                    <asp:BoundField DataField="DateTime" HeaderStyle-HorizontalAlign="Left" HeaderText="Updated On" />
                     <asp:BoundField DataField="Verification" HeaderStyle-HorizontalAlign="Left" HeaderText="Verification " />
                     <%-- <asp:TemplateField HeaderText="Solved Problem">
                         <ItemTemplate>
